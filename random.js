@@ -1,28 +1,59 @@
-var namespace = "http://www.w3.org/2000/svg"
+namespace = "http://www.w3.org/2000/svg"
 
 
 // Fill in this function so that it draws something using SVG shapes!
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createFirstScene() {
-    
-}
+    makeRect(0, 60, 400, 40, "#ECCC72")//sand
+    makeRect(0, 20, 400, 40, "#1770A3")//ocean
+    makeRect(0, 0, 400, 40, "#2ACBC6")//sky
+    makeCircle(80, 15, 15, "yellow")//sun
+    makeRect(0, 40, 400, 20, "white", 0.2)//ocean
+    makeRect(0, 60, 400, 15, "#C1874D", 0.2)//sand
+    var myNumber = Math.random()
+    if(myNumber<0.5){
+    makeEllipse(15, 82, 8, 4, "#893F0D")}
+    makeText("Day", 70, 15, 16, "Roboto", "black", 1)}
 
 
 // Fill in this function so that it draws something using SVG shapes!
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createSecondScene() {
-    
-}
+    makeRect(0, 60, 400, 40, "#593e15")//sand
+    makeRect(0, 20, 400, 40, "#17072b")//ocean
+    makeRect(0, 0, 400, 40, "#2d135b")//sky
+    makeCircle(160, 23 , 15, "#CACAAF")//sun
+    var myNumber = Math.random()
+    if(myNumber<0.5){
+    makeCircle(154, 20 , 3, "#383b3d")//sunspot
+    makeCircle(160, 28 , 2, "#383b3d")//sunspot
+    makeCircle(153, 30 , 4, "#383b3d")//sunspot
+    makeCircle(168, 26 , 3, "#383b3d")//sunspot
+    makeCircle(166, 15 , 4, "#383b3d")//sunspot
+    }
+    makeText("Night", 70, 15, 16, "Roboto", "black", 1)}
+
 
 
 // Fill in this function so that it draws something using SVG shapes!
 // You need to use at least 3 different types of shape.
 // Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createThirdScene() {
+    makeRect(0, 60, 400, 40, "#C1874D")//sand
+    makeRect(0, 0, 400, 40, "#055d8c")//sky
+    makeCircle(60, 40, 15, "#FF4500")//sun
+    makeRect(0, 40, 400, 20, "#01476d")//ocean
     
-}
+    makeRect(0, 40, 400, 20, "white", 0.2)//ocean
+    makeRect(0, 60, 400, 15, "#593e15", 0.2)//sand
+    var myNumber = Math.random()
+    if(myNumber<0.5){
+    makeEllipse(175, 82, 8, 4, "#893F0D")}
+    makeText("Morning", 70, 15, 16, "Roboto", "black", 1)}
+    
+
 
 
 
@@ -32,9 +63,17 @@ function createThirdScene() {
 // This function is called whenever you press the "Go!" button.
 function createRandomScene() {
     // Generate a random number between 0 and 1, and store it in a variable.
-    
+    var myNumber = Math.random()
     // If the number is less than 0.33, call the function to create your first scene.
-    
+    if(myNumber<0.33){
+        createFirstScene()
+         }else{
+             if(myNumber<0.67){
+                 createSecondScene()
+             }else{
+                createThirdScene()
+             }
+         }
     
     
     // Else, if the number is less than 0.67, call the function to create your second scene.
